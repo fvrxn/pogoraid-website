@@ -13,7 +13,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
+<<<<<<< Updated upstream
       <body>{children}</body>
+=======
+      <body>
+        <div>
+            {children}
+        </div>
+      </body>
+>>>>>>> Stashed changes
     </html>
   );
 }
