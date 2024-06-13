@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+      font-family: 'Nunito';
+      src: url("../public/assets/fonts/Nunito.ttf");
+    }
+}
+
+@layer base {
+  html {
+      @apply bg-black;
+  }
+}
