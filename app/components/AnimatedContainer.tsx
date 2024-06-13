@@ -22,6 +22,7 @@ const AnimatedContainer = ({ children }: { children: React.ReactNode }) => {
         initial="hidden"
         animate="enter"
         exit="exit"
+        className="h-screen flex flex-col"
       >
         {children}
       </motion.div>
