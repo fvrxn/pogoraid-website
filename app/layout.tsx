@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body>
-        <div>
+        <div className="bg-black mx-5 pt-3 mb-5">
             {children}
             <Analytics/>
             <SpeedInsights/>
