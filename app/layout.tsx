@@ -24,8 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body>
-        <div className="bg-black mx-5 pt-3 mb-5">
+      <body className="flex justify-center items-center min-h-screen">
+        <div className="bg-black mx-5 pt-3 mb-5 max-w-[400px]">
             {children}
             <Analytics/>
             <SpeedInsights/>
@@ -33,4 +33,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+} 
