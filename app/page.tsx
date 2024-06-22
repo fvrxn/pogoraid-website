@@ -46,7 +46,10 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div id="placeholder" className="flex-grow"></div>
+      <div id="friendlist" className="pt-5">
+        <Button linkTo="https://docs.google.com/spreadsheets/d/1OnADqJSCN9ApByVCGyDOfQrbS-cfARLEE_NSJCgHPa4/edit?usp=drivesdk" text="Freundesliste" />
+      </div>
+      <div id="placeholder" className="flex-grow"/>
       <div className="text-center text-white opacity-50 text-footer font-Nunito">
         <p>Made with ❤️ in Berlin</p>
         <Link href={"/impressum"} className="mt-4">
