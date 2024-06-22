@@ -15,7 +15,7 @@ export default function RaidBoss() {
       </h1>
       <DropDown text="Raidboss auswählen" />
       <div id="spacer" className="mt-40" />
-      <Button linkTo="/raid-generator/range" text="Weiter" />
+      <Button linkTo="/raid-generator/time" text="Weiter" />
     </div>
   );
 }
