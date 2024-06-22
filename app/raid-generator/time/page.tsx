@@ -15,7 +15,7 @@ export default function Time() {
       </h1>
       <TimeInput />
       <div id="spacer" className="mt-40" />
-      <Button linkTo="/raid-generator/time" text="Weiter" />
+      <Button linkTo="/raid-generator/trainer" text="Weiter" />
     </div>
     );
   }
