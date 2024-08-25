@@ -15,9 +15,12 @@ import CheckBox from "./components/CheckBox";
 
 export default function Home() {
 
+  // variables
   var unmount = true;
   var availableData = false;
+  var raidTemplate = '';
 
+  // states
   const [raidBoss, setRaidBoss] = useState('');
   const [time, setTime] = useState('');
   const [trainer, setTrainer] = useState('');
@@ -55,6 +58,7 @@ export default function Home() {
   }, []);
   
 
+  // function to update the checkbox)
   function updateCheckBox() {
     // if user unchecks the checkbox, clear the local storage
     if (rememberMe) {
@@ -68,6 +72,29 @@ export default function Home() {
       localStorage.setItem('trainerCode', trainerCode);
       setRememberMe(true);
     }
+  }
+
+  // function to generate the raid template
+  function generateTemplate() {
+    // todo -> check if null
+
+    if (raidBoss) {
+      const { label, boss } = JSON.parse(raidBoss);
+      raidTemplate = raidTemplate + `${label} - ${boss} \n`;
+      raidTemplate = raidTemplate + `🕞 Startzeit: ${time} \n`;
+      raidTemplate = raidTemplate + `\n`;
+      raidTemplate = raidTemplate + `1️⃣\n`;
+      raidTemplate = raidTemplate + `2️⃣\n`;
+      raidTemplate = raidTemplate + `3️⃣\n`;
+      raidTemplate = raidTemplate + `4️⃣\n`;
+      raidTemplate = raidTemplate + `5️⃣\n`;
+      raidTemplate = raidTemplate + `\n`;
+      raidTemplate = raidTemplate + `Host: ${trainer} \n`;
+      raidTemplate = raidTemplate + `ID: ${trainerCode} \n`;
+
+      console.log(raidTemplate);
+    }
+
   }
 
   return (
@@ -86,7 +113,8 @@ export default function Home() {
         <InputField type="trainercode" placeholder="Trainer Code" changeValue={(event) => setTrainerCode(event.target.value)} value={trainerCode} />
 
         
-        <Button linkTo="/result" text="Generate Raid" />
+        <Button linkTo="" text="Generate Raid" onClick={generateTemplate()}/>
+        <p onClick={() => {generateTemplate()}}>Test</p>
         <CheckBox placeholder="Daten für nächsten Raid merken" state={rememberMe} setState={updateCheckBox} />
 
       </div>
