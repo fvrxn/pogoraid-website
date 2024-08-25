@@ -10,9 +10,9 @@ interface CheckBoxProps {
 
 export default function CheckBox( {placeholder, state, setState}: CheckBoxProps) {
     return (
-        <div className="">
+        <div className="pt-5">
             <input type='checkbox' checked={state} onChange={(event) => setState(!state)}/>
-            <label className="text-white font-Nunito text-button">{placeholder}</label>
+            <label className="text-white font-Nunito text-button pl-2">{placeholder}</label>
         </div>
     );
     }
