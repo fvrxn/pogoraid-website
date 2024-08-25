@@ -11,7 +11,7 @@ interface ButtonProps {
 
 export default function Button( {linkTo, text}: ButtonProps) {
     return (
-        <div className="bg-primary rounded-lg inline-flex text-center items-center justify-center px-8 py-4 cursor-pointer">
+        <div className="bg-primary rounded-lg w-full inline-flex text-center items-center justify-center px-8 py-4 cursor-pointer">
             <Link className="text-white font-Nunito font-semibold text-button" href={linkTo}>{text}</Link>
         </div>
     );
