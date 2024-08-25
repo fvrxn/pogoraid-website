@@ -27,7 +27,7 @@ export default function TimeInput() {
 
   return (
     <div className="mt-10 bg-white rounded-lg text-center px-8 py-5 cursor-pointer">
-      <p className="font-Nunito text-black text-button">Zeit auswählen</p>
+      <p className="font-Nunito text-black text-button">Wann startet der Raid?</p>
       <div className="flex justify-center mt-2 space-x-2">
         <input
           type="number"
