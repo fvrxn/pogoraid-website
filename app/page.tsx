@@ -83,11 +83,11 @@ export default function Home() {
       raidTemplate = raidTemplate + `${label} - ${boss} \n`;
       raidTemplate = raidTemplate + `🕞 Startzeit: ${time} \n`;
       raidTemplate = raidTemplate + `\n`;
-      raidTemplate = raidTemplate + `1️⃣\n`;
-      raidTemplate = raidTemplate + `2️⃣\n`;
-      raidTemplate = raidTemplate + `3️⃣\n`;
-      raidTemplate = raidTemplate + `4️⃣\n`;
-      raidTemplate = raidTemplate + `5️⃣\n`;
+      raidTemplate = raidTemplate + `1️⃣ - \n`;
+      raidTemplate = raidTemplate + `2️⃣ - \n`;
+      raidTemplate = raidTemplate + `3️⃣ - \n`;
+      raidTemplate = raidTemplate + `4️⃣ - \n`;
+      raidTemplate = raidTemplate + `5️⃣ - \n`;
       raidTemplate = raidTemplate + `\n`;
       raidTemplate = raidTemplate + `Host: ${trainer} \n`;
       raidTemplate = raidTemplate + `ID: ${trainerCode} \n`;
@@ -114,7 +114,6 @@ export default function Home() {
 
         
         <Button linkTo="" text="Generate Raid" onClick={generateTemplate()}/>
-        <p onClick={() => {generateTemplate()}}>Test</p>
         <CheckBox placeholder="Daten für nächsten Raid merken" state={rememberMe} setState={updateCheckBox} />
 
       </div>
