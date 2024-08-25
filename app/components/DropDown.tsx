@@ -27,7 +27,7 @@ export default function DropDown({ text, state, setState }: DropDownProps) {
         {raidboss.map((group, index) => (
           <optgroup key={index} label={group.label}>
             {group.bosses.map((boss, bossIndex) => (
-              <option key={bossIndex} value={boss}>
+              <option key={bossIndex} value={JSON.stringify({ label: group.label, boss })}>
                 {boss}
               </option>
             ))}
