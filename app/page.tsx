@@ -55,6 +55,21 @@ export default function Home() {
   }, []);
   
 
+  function updateCheckBox() {
+    // if user unchecks the checkbox, clear the local storage
+    if (rememberMe) {
+      localStorage.clear();
+      setRememberMe(false);
+    }
+
+    // if user checks the checkbox, save the data to local storage
+    else {
+      localStorage.setItem('trainerName', trainer);
+      localStorage.setItem('trainerCode', trainerCode);
+      setRememberMe(true);
+    }
+  }
+
   return (
     <AnimatedContainer>
       <h1 className="text-white font-Nunito font-bold text-heading">Pokemon Go Raid Generator</h1>
@@ -72,12 +87,7 @@ export default function Home() {
 
         
         <Button linkTo="/result" text="Generate Raid" />
-        <CheckBox placeholder="Daten für nächsten Raid merken" state={rememberMe} setState={setRememberMe} />
-
-
-
-        <p className="text-white text-bold" onClick={()=>{localStorage.setItem("trainerName", trainer)}}>Trainer code Speicerh</p>
-        <p className="text-white text-bold" onClick={()=>{localStorage.clear();}}>Trainer löschen</p>
+        <CheckBox placeholder="Daten für nächsten Raid merken" state={rememberMe} setState={updateCheckBox} />
 
       </div>
     </AnimatedContainer>
