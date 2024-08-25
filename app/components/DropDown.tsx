@@ -1,16 +1,17 @@
-import { useState } from "react";
 import { raidboss } from "../data/data";
 
 // typescript types
 interface DropDownProps {
   text: string;
+  state: any;
+  setState: (value: any) => void;
 }
 
-export default function DropDown({ text }: DropDownProps) {
-  const [selectedBoss, setSelectedBoss] = useState("");
+export default function DropDown({ text, state, setState }: DropDownProps) {
+
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedBoss(event.target.value);
+    setState(event.target.value);
   };
 
   return (
@@ -19,7 +20,7 @@ export default function DropDown({ text }: DropDownProps) {
       <select
         id="raidboss"
         name="raidboss"
-        value={selectedBoss}
+        value={state}
         onChange={handleChange}
         className="mt-2 block w-full font-Nunito text-text border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md"
       >

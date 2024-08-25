@@ -1,6 +1,9 @@
 // next imports
 import type { Metadata } from "next";
 
+// react imports
+import { useState } from "react";
+
 // style imports
 import "./globals.css";
 
@@ -8,6 +11,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+// app context imports
+import { AppContextProvider } from "@/app/context/AppContext";
 
 export const metadata: Metadata = {
   title: "Pokemon Go Raid Generator - erstelle und teile Raid-Nachrichten | PogoRaid.de",
@@ -22,14 +27,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+  const [selectedBoss, setSelectedBoss] = useState("")
+
+
+
   return (
     <html lang="de">
       <body className="flex justify-center min-h-screen">
-        <div className="bg-black mx-5 pt-3 mb-5 max-w-[400px]">
-            {children}
-            <Analytics/>
-            <SpeedInsights/>
-        </div>
+        <AppContextProvider>
+          <div className="bg-black mx-5 pt-3 mb-5 max-w-[400px]">
+              {children}
+              <Analytics/>
+              <SpeedInsights/>
+          </div>
+        </AppContextProvider>
       </body>
     </html>
   );
