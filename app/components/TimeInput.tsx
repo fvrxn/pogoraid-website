@@ -1,3 +1,5 @@
+// todo -> add setter to get value
+
 // react imports
 import React, { useState } from 'react';
 
